@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B3ED6F1267AF86F00FF06CF /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1B3ED6F0267AF86F00FF06CF /* Intents.intentdefinition */; };
+		1BA2CC3A273E0A8B009F3D40 /* ImageDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2CC39273E0A8B009F3D40 /* ImageDocument.swift */; };
+		1BCE73B1267AFF38008E33B6 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BCE739E267AFEDB008E33B6 /* Intents.framework */; };
+		1BCE73B4267AFF38008E33B6 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE73B3267AFF38008E33B6 /* IntentHandler.swift */; };
+		1BCE73B8267AFF38008E33B6 /* Sprite Cutter Intent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1BCE73B0267AFF38008E33B6 /* Sprite Cutter Intent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1BCE73BE267B00E2008E33B6 /* CutSpritesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCE73BD267B00E2008E33B6 /* CutSpritesHandler.swift */; };
+		1BCE73BF267B0305008E33B6 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1B3ED6F0267AF86F00FF06CF /* Intents.intentdefinition */; };
+		1BCE73C0267B06C6008E33B6 /* Cutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEEAFE2623B0AA00F13CB8 /* Cutter.swift */; };
+		1BD927DB284A8469001329A9 /* JaydenCodeGenerator in Frameworks */ = {isa = PBXBuildFile; productRef = 1BD927DA284A8469001329A9 /* JaydenCodeGenerator */; };
+		1BFEEAEF262386C300F13CB8 /* Sprite_CutterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEEAEE262386C300F13CB8 /* Sprite_CutterApp.swift */; };
+		1BFEEAF1262386C300F13CB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEEAF0262386C300F13CB8 /* ContentView.swift */; };
+		1BFEEAF3262386C600F13CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BFEEAF2262386C600F13CB8 /* Assets.xcassets */; };
+		1BFEEAFF2623B0AA00F13CB8 /* Cutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEEAFE2623B0AA00F13CB8 /* Cutter.swift */; };
+		1BFEEB062624EF4000F13CB8 /* IntField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEEB052624EF4000F13CB8 /* IntField.swift */; };
+		1BFEEB1126251B1D00F13CB8 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEEB1026251B1D00F13CB8 /* HelpView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1BCE73B6267AFF38008E33B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BFEEAE3262386C300F13CB8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BCE73AF267AFF38008E33B6;
+			remoteInfo = "Sprite Cutter Intent";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1BCE73AB267AFEDB008E33B6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1BCE73B8267AFF38008E33B6 /* Sprite Cutter Intent.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1B3ED6F0267AF86F00FF06CF /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		1BA2CC39273E0A8B009F3D40 /* ImageDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDocument.swift; sourceTree = "<group>"; };
+		1BCE739E267AFEDB008E33B6 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		1BCE73B0267AFF38008E33B6 /* Sprite Cutter Intent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sprite Cutter Intent.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BCE73B3267AFF38008E33B6 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		1BCE73B5267AFF38008E33B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BCE73B9267AFF38008E33B6 /* Sprite Cutter Intent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sprite Cutter Intent.entitlements"; sourceTree = "<group>"; };
+		1BCE73BD267B00E2008E33B6 /* CutSpritesHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutSpritesHandler.swift; sourceTree = "<group>"; };
+		1BFEEAEB262386C300F13CB8 /* Sprite Cutter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprite Cutter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BFEEAEE262386C300F13CB8 /* Sprite_CutterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprite_CutterApp.swift; sourceTree = "<group>"; };
+		1BFEEAF0262386C300F13CB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1BFEEAF2262386C600F13CB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1BFEEAF7262386C600F13CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BFEEAFE2623B0AA00F13CB8 /* Cutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cutter.swift; sourceTree = "<group>"; };
+		1BFEEB052624EF4000F13CB8 /* IntField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntField.swift; sourceTree = "<group>"; };
+		1BFEEB092624FF3E00F13CB8 /* Sprite Cutter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sprite Cutter.entitlements"; sourceTree = "<group>"; };
+		1BFEEB1026251B1D00F13CB8 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1BCE73AD267AFF38008E33B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BCE73B1267AFF38008E33B6 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BFEEAE8262386C300F13CB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BD927DB284A8469001329A9 /* JaydenCodeGenerator in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1BCE739D267AFEDB008E33B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BCE739E267AFEDB008E33B6 /* Intents.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1BCE73B2267AFF38008E33B6 /* Sprite Cutter Intent */ = {
+			isa = PBXGroup;
+			children = (
+				1BCE73B9267AFF38008E33B6 /* Sprite Cutter Intent.entitlements */,
+				1BCE73B3267AFF38008E33B6 /* IntentHandler.swift */,
+				1BCE73BD267B00E2008E33B6 /* CutSpritesHandler.swift */,
+				1BCE73B5267AFF38008E33B6 /* Info.plist */,
+			);
+			path = "Sprite Cutter Intent";
+			sourceTree = "<group>";
+		};
+		1BFEEAE2262386C300F13CB8 = {
+			isa = PBXGroup;
+			children = (
+				1BFEEAED262386C300F13CB8 /* Sprite Cutter */,
+				1BCE73B2267AFF38008E33B6 /* Sprite Cutter Intent */,
+				1BCE739D267AFEDB008E33B6 /* Frameworks */,
+				1BFEEAEC262386C300F13CB8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1BFEEAEC262386C300F13CB8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BFEEAEB262386C300F13CB8 /* Sprite Cutter.app */,
+				1BCE73B0267AFF38008E33B6 /* Sprite Cutter Intent.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1BFEEAED262386C300F13CB8 /* Sprite Cutter */ = {
+			isa = PBXGroup;
+			children = (
+				1BFEEB092624FF3E00F13CB8 /* Sprite Cutter.entitlements */,
+				1BFEEAEE262386C300F13CB8 /* Sprite_CutterApp.swift */,
+				1BFEEAF0262386C300F13CB8 /* ContentView.swift */,
+				1BFEEB052624EF4000F13CB8 /* IntField.swift */,
+				1BFEEB1026251B1D00F13CB8 /* HelpView.swift */,
+				1BFEEAFE2623B0AA00F13CB8 /* Cutter.swift */,
+				1BA2CC39273E0A8B009F3D40 /* ImageDocument.swift */,
+				1B3ED6F0267AF86F00FF06CF /* Intents.intentdefinition */,
+				1BFEEAF2262386C600F13CB8 /* Assets.xcassets */,
+				1BFEEAF7262386C600F13CB8 /* Info.plist */,
+			);
+			path = "Sprite Cutter";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1BCE73AF267AFF38008E33B6 /* Sprite Cutter Intent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BCE73BA267AFF38008E33B6 /* Build configuration list for PBXNativeTarget "Sprite Cutter Intent" */;
+			buildPhases = (
+				1BCE73AC267AFF38008E33B6 /* Sources */,
+				1BCE73AD267AFF38008E33B6 /* Frameworks */,
+				1BCE73AE267AFF38008E33B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sprite Cutter Intent";
+			productName = "Sprite Cutter Intent";
+			productReference = 1BCE73B0267AFF38008E33B6 /* Sprite Cutter Intent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		1BFEEAEA262386C300F13CB8 /* Sprite Cutter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BFEEAFA262386C600F13CB8 /* Build configuration list for PBXNativeTarget "Sprite Cutter" */;
+			buildPhases = (
+				1BFEEAE7262386C300F13CB8 /* Sources */,
+				1BFEEAE8262386C300F13CB8 /* Frameworks */,
+				1BFEEAE9262386C300F13CB8 /* Resources */,
+				1BCE73AB267AFEDB008E33B6 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BCE73B7267AFF38008E33B6 /* PBXTargetDependency */,
+			);
+			name = "Sprite Cutter";
+			packageProductDependencies = (
+				1BD927DA284A8469001329A9 /* JaydenCodeGenerator */,
+			);
+			productName = "Sprite Cutter";
+			productReference = 1BFEEAEB262386C300F13CB8 /* Sprite Cutter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1BFEEAE3262386C300F13CB8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					1BCE73AF267AFF38008E33B6 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					1BFEEAEA262386C300F13CB8 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 1BFEEAE6262386C300F13CB8 /* Build configuration list for PBXProject "Sprite Cutter" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1BFEEAE2262386C300F13CB8;
+			packageReferences = (
+				1BD927D9284A8469001329A9 /* XCRemoteSwiftPackageReference "JaydenCodeGenerator" */,
+			);
+			productRefGroup = 1BFEEAEC262386C300F13CB8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1BFEEAEA262386C300F13CB8 /* Sprite Cutter */,
+				1BCE73AF267AFF38008E33B6 /* Sprite Cutter Intent */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1BCE73AE267AFF38008E33B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BFEEAE9262386C300F13CB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BFEEAF3262386C600F13CB8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BCE73AC267AFF38008E33B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BCE73BF267B0305008E33B6 /* Intents.intentdefinition in Sources */,
+				1BCE73B4267AFF38008E33B6 /* IntentHandler.swift in Sources */,
+				1BCE73C0267B06C6008E33B6 /* Cutter.swift in Sources */,
+				1BCE73BE267B00E2008E33B6 /* CutSpritesHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BFEEAE7262386C300F13CB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B3ED6F1267AF86F00FF06CF /* Intents.intentdefinition in Sources */,
+				1BFEEAF1262386C300F13CB8 /* ContentView.swift in Sources */,
+				1BFEEB1126251B1D00F13CB8 /* HelpView.swift in Sources */,
+				1BA2CC3A273E0A8B009F3D40 /* ImageDocument.swift in Sources */,
+				1BFEEAEF262386C300F13CB8 /* Sprite_CutterApp.swift in Sources */,
+				1BFEEB062624EF4000F13CB8 /* IntField.swift in Sources */,
+				1BFEEAFF2623B0AA00F13CB8 /* Cutter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BCE73B7267AFF38008E33B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BCE73AF267AFF38008E33B6 /* Sprite Cutter Intent */;
+			targetProxy = 1BCE73B6267AFF38008E33B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1BCE73BB267AFF38008E33B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Sprite Cutter Intent/Sprite Cutter Intent.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = VA3SY54YU8;
+				INFOPLIST_FILE = "Sprite Cutter Intent/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jaydenirwin.spritecutter.Sprite-Cutter-Intent";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1BCE73BC267AFF38008E33B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Sprite Cutter Intent/Sprite Cutter Intent.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = VA3SY54YU8;
+				INFOPLIST_FILE = "Sprite Cutter Intent/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jaydenirwin.spritecutter.Sprite-Cutter-Intent";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1BFEEAF8262386C600F13CB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1BFEEAF9262386C600F13CB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1BFEEAFB262386C600F13CB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Sprite Cutter/Sprite Cutter.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = VA3SY54YU8;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Sprite Cutter/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaydenirwin.spritecutter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Debug;
+		};
+		1BFEEAFC262386C600F13CB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Sprite Cutter/Sprite Cutter.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = VA3SY54YU8;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Sprite Cutter/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaydenirwin.spritecutter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1BCE73BA267AFF38008E33B6 /* Build configuration list for PBXNativeTarget "Sprite Cutter Intent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BCE73BB267AFF38008E33B6 /* Debug */,
+				1BCE73BC267AFF38008E33B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BFEEAE6262386C300F13CB8 /* Build configuration list for PBXProject "Sprite Cutter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BFEEAF8262386C600F13CB8 /* Debug */,
+				1BFEEAF9262386C600F13CB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BFEEAFA262386C600F13CB8 /* Build configuration list for PBXNativeTarget "Sprite Cutter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BFEEAFB262386C600F13CB8 /* Debug */,
+				1BFEEAFC262386C600F13CB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1BD927D9284A8469001329A9 /* XCRemoteSwiftPackageReference "JaydenCodeGenerator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JaydenIrwin/JaydenCodeGenerator";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1BD927DA284A8469001329A9 /* JaydenCodeGenerator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1BD927D9284A8469001329A9 /* XCRemoteSwiftPackageReference "JaydenCodeGenerator" */;
+			productName = JaydenCodeGenerator;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1BFEEAE3262386C300F13CB8 /* Project object */;
+}
