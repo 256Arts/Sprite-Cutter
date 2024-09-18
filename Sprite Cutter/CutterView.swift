@@ -1,14 +1,14 @@
 //
-//  ContentView.swift
+//  CutterView.swift
 //  Sprite Cutter
 //
-//  Created by Jayden Irwin on 2021-04-11.
+//  Created by 256 Arts Developer on 2021-04-11.
 //
 
 import SwiftUI
 import JaydenCodeGenerator
 
-struct ContentView: View, DropDelegate {
+struct CutterView: View, DropDelegate {
     
     #if targetEnvironment(macCatalyst)
     let isCatalyst = true
@@ -131,11 +131,11 @@ struct ContentView: View, DropDelegate {
         #if targetEnvironment(macCatalyst)
         .navigationBarHidden(true)
         #endif
-        .onChange(of: cutter.spacing, perform: { newValue in
+        .onChange(of: cutter.spacing) { _, newValue in
             if newValue == 1138 {
                 showingJaydenCode = true
             }
-        })
+        }
         .fileImporter(isPresented: $showingImport, allowedContentTypes: [.image], onCompletion: { result in
             guard let url = try? result.get(), url.startAccessingSecurityScopedResource(), let image = UIImage(contentsOfFile: url.path) else {
                 showingImportError = true
@@ -147,9 +147,9 @@ struct ContentView: View, DropDelegate {
         .fileExporter(isPresented: $showingExport, documents: (try? cutDocuments()) ?? [], contentType: .png) { result in
             //
         }
-        .sheet(isPresented: $showingHelp, content: {
+        .sheet(isPresented: $showingHelp) {
             HelpView()
-        })
+        }
         .alert("Secret Code: \(jaydenCode)", isPresented: $showingJaydenCode) {
             Button("Copy") {
                 UIPasteboard.general.string = jaydenCode
@@ -186,8 +186,6 @@ struct ContentView: View, DropDelegate {
     
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    CutterView()
 }

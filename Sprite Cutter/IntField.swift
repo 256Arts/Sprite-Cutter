@@ -2,7 +2,7 @@
 //  IntField.swift
 //  Sprite Cutter
 //
-//  Created by Jayden Irwin on 2021-04-12.
+//  Created by 256 Arts Developer on 2021-04-12.
 //
 
 import SwiftUI
@@ -25,8 +25,6 @@ struct IntField: View {
     }
 }
 
-struct IntField_Previews: PreviewProvider {
-    static var previews: some View {
-        IntField(title: "", value: .constant(0))
-    }
+#Preview {
+    IntField(title: "", value: .constant(0))
 }

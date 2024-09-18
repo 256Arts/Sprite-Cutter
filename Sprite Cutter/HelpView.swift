@@ -2,7 +2,7 @@
 //  HelpView.swift
 //  Sprite Cutter
 //
-//  Created by Jayden Irwin on 2021-04-12.
+//  Created by 256 Arts Developer on 2021-04-12.
 //
 
 import SwiftUI
@@ -10,11 +10,11 @@ import StoreKit
 
 enum AppID: Int {
     case spritePencil = 1437835952
-    case spriteFonts = 1554027877
 }
 
 struct HelpView: View {
     
+    #if os(iOS)
     let appStoreVC: SKStoreProductViewController = {
         let vc = SKStoreProductViewController()
         vc.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier: AppID.spritePencil.rawValue]) { (result, error) in
@@ -22,20 +22,15 @@ struct HelpView: View {
         }
         return vc
     }()
-    let appStoreVC2: SKStoreProductViewController = {
-        let vc = SKStoreProductViewController()
-        vc.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier: AppID.spriteFonts.rawValue]) { (result, error) in
-            print(error?.localizedDescription)
-        }
-        return vc
-    }()
+    #endif
     
     @Environment(\.openURL) var openURL
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
+                #if os(iOS)
                 Button {
                     #if targetEnvironment(macCatalyst)
                     openURL(URL(string: "https://apps.apple.com/app/sprite-pencil/id\(AppID.spritePencil.rawValue)")!)
@@ -59,36 +54,24 @@ struct HelpView: View {
                             .foregroundColor(.accentColor)
                     }
                 }
-                Button {
-                    #if targetEnvironment(macCatalyst)
-                    openURL(URL(string: "https://apps.apple.com/app/sprite-fonts/id\(AppID.spriteFonts.rawValue)")!)
-                    #else
-                    if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
-                        scene.windows.first?.rootViewController?.present(appStoreVC2, animated: true)
-                    }
-                    #endif
-                } label: {
-                    Label {
-                        VStack(alignment: .leading) {
-                            Text("Try Sprite Fonts")
-                                .foregroundColor(Color(UIColor.label))
-                            Text("Install Pixel Fonts")
-                                .font(.subheadline)
-                                .foregroundColor(Color(UIColor.secondaryLabel))
-                        }
-                    } icon: {
-                        Image(systemName: "arrow.down.app")
-                            .imageScale(.large)
-                            .foregroundColor(.accentColor)
-                    }
+                #endif
+                
+                Link(destination: URL(string: "https://www.256arts.com/")!) {
+                    Label("Developer Website", systemImage: "safari")
                 }
-                Link("Developer Website", destination: URL(string: "https://www.jaydenirwin.com/")!)
+                Link(destination: URL(string: "https://www.256arts.com/joincommunity/")!) {
+                    Label("Join Community", systemImage: "bubble.left.and.bubble.right")
+                }
+                Link(destination: URL(string: "https://github.com/256Arts/Sprite-Cutter")!) {
+                    Label("Contribute on GitHub", systemImage: "chevron.left.forwardslash.chevron.right")
+                }
             }
-            .listStyle(InsetGroupedListStyle())
             .navigationTitle("Help")
             .toolbar {
-                Button("Done") {
-                    dismiss()
+                ToolbarItem(placement: .navigation) {
+                    Button("Done") {
+                        dismiss()
+                    }
                 }
             }
         }
@@ -96,8 +79,6 @@ struct HelpView: View {
     }
 }
 
-struct HelpView_Previews: PreviewProvider {
-    static var previews: some View {
-        HelpView()
-    }
+#Preview {
+    HelpView()
 }
