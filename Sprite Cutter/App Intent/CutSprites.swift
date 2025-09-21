@@ -5,7 +5,9 @@
 //  Created by 256 Arts Developer on 2023-10-08.
 //
 
+#if canImport(UIKit)
 import UIKit
+#endif
 import UniformTypeIdentifiers
 import AppIntents
 
@@ -56,9 +58,15 @@ struct CutSprites: AppIntent, CustomIntentMigratedAppIntent, PredictableIntent {
     }
 
     func perform() async throws -> some IntentResult & ReturnsValue<[IntentFile]> {
+        #if canImport(UIKit)
         guard let data = image?.data, let image = UIImage(data: data) else {
             throw CutError.failedToLoadImage
         }
+        #else
+        guard let data = image?.data, let image = NSImage(data: data) else {
+            throw CutError.failedToLoadImage
+        }
+        #endif
         let maxImageSize = 512
         guard Int(image.size.width) <= maxImageSize, Int(image.size.height) <= maxImageSize else {
             throw CutError.imageTooLarge

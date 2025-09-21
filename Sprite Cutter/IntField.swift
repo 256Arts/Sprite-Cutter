@@ -18,7 +18,7 @@ struct IntField: View {
         }, set: { (newValue) in
             value = Int(newValue) ?? 1
         }))
-        .textFieldStyle(RoundedBorderTextFieldStyle())
+        .textFieldStyle(.roundedBorder)
         .keyboardType(.numberPad)
         .multilineTextAlignment(.trailing)
         .frame(width: 80)

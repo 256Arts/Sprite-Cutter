@@ -12,8 +12,8 @@ struct SpriteCutterAppShortcutsProvider: AppShortcutsProvider {
         AppShortcut(
             intent: CutSprites(),
             phrases: [
-                "Cut sprites",
-                "Cut spritesheet"
+                "Cut sprites with \(.applicationName)",
+                "Cut spritesheet with \(.applicationName)"
             ],
             shortTitle: "Cut Sprites",
             systemImageName: "scissors"

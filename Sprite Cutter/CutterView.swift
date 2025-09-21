@@ -6,14 +6,28 @@
 //
 
 import SwiftUI
-import JaydenCodeGenerator
+import StoreKit
 
 struct CutterView: View, DropDelegate {
+    
+    #if os(iOS)
+    let appStoreVC: SKStoreProductViewController = {
+        let vc = SKStoreProductViewController()
+        vc.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier: AppID.spritePencil.rawValue]) { (result, error) in
+            print(error?.localizedDescription)
+        }
+        return vc
+    }()
+    #endif
     
     #if targetEnvironment(macCatalyst)
     let isCatalyst = true
     #else
     let isCatalyst = false
+    #endif
+    
+    #if targetEnvironment(macCatalyst)
+    @Environment(\.openURL) private var openURL
     #endif
     
     @State var cutter = Cutter()
@@ -22,12 +36,6 @@ struct CutterView: View, DropDelegate {
     @State var showingImportError = false
     @State var showingExport = false
     @State var showingExportError = false
-    @State var showingHelp = false
-    @State var showingJaydenCode = false
-    
-    var jaydenCode: String {
-        JaydenCodeGenerator.generateCode(secret: "QXC2HFR010")
-    }
     
     var body: some View {
         VStack {
@@ -98,7 +106,7 @@ struct CutterView: View, DropDelegate {
             Divider()
             HStack {
                 Spacer()
-                Button("Cut") {
+                Button("Cut", systemImage: "scissors") {
                     showingExport = true
                 }
                 .buttonStyle(.borderedProminent)
@@ -110,31 +118,26 @@ struct CutterView: View, DropDelegate {
             Button {
                 showingExport = true
             } label: {
-                Text("Cut")
+                Label("Cut", systemImage: "scissors")
                     .font(.headline)
                     .frame(idealWidth: .infinity, maxWidth: .infinity)
             }
+            #if os(visionOS)
             .buttonStyle(.borderedProminent)
+            #else
+            .buttonStyle(.glassProminent)
+            #endif
             .controlSize(.large)
             .disabled(!cutter.canCut)
             .padding()
             #endif
         }
         .toolbar {
-            Button {
-                showingHelp = true
-            } label: {
-                Image(systemName: "questionmark.circle")
+            #if !targetEnvironment(macCatalyst)
+            ToolbarItemGroup(placement: .secondaryAction) {
+                Sprite_CutterApp.links()
             }
-            .imageScale(.large)
-        }
-        #if targetEnvironment(macCatalyst)
-        .navigationBarHidden(true)
-        #endif
-        .onChange(of: cutter.spacing) { _, newValue in
-            if newValue == 1138 {
-                showingJaydenCode = true
-            }
+            #endif
         }
         .fileImporter(isPresented: $showingImport, allowedContentTypes: [.image], onCompletion: { result in
             guard let url = try? result.get(), url.startAccessingSecurityScopedResource(), let image = UIImage(contentsOfFile: url.path) else {
@@ -146,15 +149,6 @@ struct CutterView: View, DropDelegate {
         })
         .fileExporter(isPresented: $showingExport, documents: (try? cutDocuments()) ?? [], contentType: .png) { result in
             //
-        }
-        .sheet(isPresented: $showingHelp) {
-            HelpView()
-        }
-        .alert("Secret Code: \(jaydenCode)", isPresented: $showingJaydenCode) {
-            Button("Copy") {
-                UIPasteboard.general.string = jaydenCode
-            }
-            Button("OK", role: .cancel, action: { })
         }
         .alert("Import Error", isPresented: $showingImportError) {
             Button("OK") { }
