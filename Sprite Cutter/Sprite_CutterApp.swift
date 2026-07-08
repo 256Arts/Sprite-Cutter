@@ -13,10 +13,23 @@ enum AppID: Int {
 
 @main
 struct Sprite_CutterApp: App {
+    
+    @State private var showingEvent = false
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {
                 CutterView()
+            }
+            .alert("Event Intro", isPresented: $showingEvent) {
+                Button("OK", role: .close) { }
+            } message: {
+                Text("Now let's celebrate by dropping in a spritesheet and trying out the new features!")
+            }
+            .onOpenURL { url in
+                if url.path().contains("spritecutter/appstoreevent") {
+                    showingEvent = true
+                }
             }
         }
         .defaultSize(width: 500, height: 650)

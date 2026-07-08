@@ -9,7 +9,7 @@ import SwiftUI
 
 struct IntField: View {
     
-    @State var title: String
+    let title: String
     @Binding var value: Int
     
     var body: some View {

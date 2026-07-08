@@ -6,20 +6,9 @@
 //
 
 import SwiftUI
-import StoreKit
 
 struct CutterView: View, DropDelegate {
-    
-    #if os(iOS)
-    let appStoreVC: SKStoreProductViewController = {
-        let vc = SKStoreProductViewController()
-        vc.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier: AppID.spritePencil.rawValue]) { (result, error) in
-            print(error?.localizedDescription)
-        }
-        return vc
-    }()
-    #endif
-    
+
     #if targetEnvironment(macCatalyst)
     let isCatalyst = true
     #else
@@ -40,8 +29,7 @@ struct CutterView: View, DropDelegate {
     var body: some View {
         VStack {
             ZStack {
-                Rectangle()
-                    .foregroundColor(.clear)
+                Color.clear
                 if let image = cutter.image {
                     Image(uiImage: image)
                         .resizable()
@@ -55,7 +43,7 @@ struct CutterView: View, DropDelegate {
                         Text("Drop spritesheet here")
                             .bold()
                     }
-                        .foregroundColor(Color(UIColor.secondaryLabel))
+                        .foregroundStyle(.secondary)
                         .frame(idealWidth: .infinity, maxWidth: .infinity, idealHeight: .infinity, maxHeight: .infinity)
                 }
             }
@@ -70,27 +58,27 @@ struct CutterView: View, DropDelegate {
                 HStack {
                     Text("Sprite Size:")
                         .font(Font.system(size: isCatalyst ? 13 : 18, weight: isCatalyst ? .regular : .bold))
-                        .foregroundColor(Color(isCatalyst ? UIColor.secondaryLabel : UIColor.label))
+                        .foregroundStyle(isCatalyst ? Color.secondary : Color.primary)
                     Spacer()
                     IntField(title: "Width", value: $cutter.spriteSize.width)
                     Text("x")
-                        .foregroundColor(Color(UIColor.secondaryLabel))
+                        .foregroundStyle(.secondary)
                     IntField(title: "Height", value: $cutter.spriteSize.height)
                 }
                 HStack {
                     Text("Number of Sprites:")
                         .font(Font.system(size: isCatalyst ? 13 : 18, weight: isCatalyst ? .regular : .bold))
-                        .foregroundColor(Color(isCatalyst ? UIColor.secondaryLabel : UIColor.label))
+                        .foregroundStyle(isCatalyst ? Color.secondary : Color.primary)
                     Spacer()
                     IntField(title: "Columns", value: $cutter.spriteCounts.x)
                     Text("x")
-                        .foregroundColor(Color(UIColor.secondaryLabel))
+                        .foregroundStyle(.secondary)
                     IntField(title: "Rows", value: $cutter.spriteCounts.y)
                 }
                 HStack {
                     Text("Spacing:")
                         .font(Font.system(size: isCatalyst ? 13 : 18, weight: isCatalyst ? .regular : .bold))
-                        .foregroundColor(Color(isCatalyst ? UIColor.secondaryLabel : UIColor.label))
+                        .foregroundStyle(isCatalyst ? Color.secondary : Color.primary)
                     Spacer()
                     #if targetEnvironment(macCatalyst)
                     IntField(title: "Spacing", value: $cutter.spacing)
@@ -134,7 +122,21 @@ struct CutterView: View, DropDelegate {
         }
         .toolbar {
             #if !targetEnvironment(macCatalyst)
-            ToolbarItemGroup(placement: .secondaryAction) {
+            ToolbarItem(placement: .topBarPinnedTrailing) {
+                Button("Import Spritesheet", systemImage: "square.and.arrow.down") {
+                    showingImport = true
+                }
+            }
+            ToolbarItem {
+                Button("Clear", systemImage: "xmark") {
+                    cutter.image = nil
+                }
+                .disabled(cutter.image == nil)
+            }
+            #if os(iOS)
+            .visibilityPriority(.low)
+            #endif
+            ToolbarOverflowMenu {
                 Sprite_CutterApp.links()
             }
             #endif
