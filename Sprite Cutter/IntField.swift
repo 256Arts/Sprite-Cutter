@@ -1,10 +1,3 @@
-//
-//  IntField.swift
-//  Sprite Cutter
-//
-//  Created by 256 Arts Developer on 2021-04-12.
-//
-
 import SwiftUI
 
 struct IntField: View {

@@ -1,10 +1,3 @@
-//
-//  Sprite_CutterApp.swift
-//  Sprite Cutter
-//
-//  Created by 256 Arts Developer on 2021-04-11.
-//
-
 import SwiftUI
 
 enum AppID: Int {

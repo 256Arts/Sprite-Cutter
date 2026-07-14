@@ -1,10 +1,3 @@
-//
-//  Cutter.swift
-//  Sprite Cutter
-//
-//  Created by 256 Arts Developer on 2021-04-11.
-//
-
 #if canImport(UIKit)
 import UIKit
 #else

@@ -1,10 +1,3 @@
-//
-//  ImageDocument.swift
-//  Sprite Cutter
-//
-//  Created by 256 Arts Developer on 2021-11-11.
-//
-
 import SwiftUI
 import UniformTypeIdentifiers
 
