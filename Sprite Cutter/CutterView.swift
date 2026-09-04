@@ -12,7 +12,7 @@ struct CutterView: View, DropDelegate {
     @Environment(\.openURL) private var openURL
     #endif
     
-    @State var cutter = Cutter()
+    @State var cutter = Cutter(image: ScreenshotMode.demoSpritesheet) // nil unless launched with -screenshotMode
     
     @State var showingImport = false
     @State var showingImportError = false
@@ -29,6 +29,7 @@ struct CutterView: View, DropDelegate {
                         .interpolation(.none)
                         .aspectRatio(contentMode: .fit)
                         .frame(idealWidth: .infinity, maxWidth: .infinity, idealHeight: .infinity, maxHeight: .infinity)
+                        .accessibilityLabel("Spritesheet")
                 } else {
                     VStack(spacing: 8) {
                         Image(systemName: "square.and.arrow.down")

@@ -27,3 +27,14 @@ When editing UI or image code, check whether a change needs to be mirrored acros
 - All sprite-cutting math lives in `Cutter`; views and the App Intent are thin wrappers over it. Add new cutting features there so both UI and Shortcuts benefit (and remember to port to Sprite Catalog).
 - `spriteCounts` is a computed property with a setter — editing column/row fields mutates `spriteSize`, and vice versa. Be careful with rounding when touching this.
 - Build & run via Xcode (`Sprite Cutter.xcodeproj`).
+
+## App Store screenshots
+
+Automated: `Scripts/screenshots.sh [iphone|ipad|mac|vision]` (add `--upload` to send them to App
+Store Connect) wraps the shared runner in `Repos/Scripts/screenshots`, which owns simulator boot,
+the 9:41 status bar, and the Mac window capture. The app's part is `.screenshots.conf`,
+`ScreenshotMode.swift` (the demo spritesheet, switched on by the `-screenshotMode` launch argument),
+and `Sprite CutterUITests/ScreenshotTests.swift` (the walk, run by the `Screenshots` scheme — the
+only tests in the project). The walk relaunches with `-screenshotEmptyState` for the drop-target
+shot. The app is sandboxed, so the runner cannot clear its saved Mac window frame —
+`ScreenshotMode.pinWindowLayout()` pins it to the scene's `defaultSize` instead.

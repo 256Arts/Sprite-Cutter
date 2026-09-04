@@ -1,0 +1,5 @@
+.context/
+.conductor/settings.local.toml
+.DS_Store
+Screenshots/
+build/

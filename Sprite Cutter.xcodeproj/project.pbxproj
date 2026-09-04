@@ -6,6 +6,16 @@
 	objectVersion = 90;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		5F00000000000000000000FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BFEEAE3262386C300F13CB8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BFEEAEA262386C300F13CB8;
+			remoteInfo = "Sprite Cutter";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		1BCE73AB267AFEDB008E33B6 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +30,7 @@
 /* Begin PBXFileReference section */
 		1BCE739E267AFEDB008E33B6 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		1BFEEAEB262386C300F13CB8 /* Sprite Cutter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprite Cutter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F00000000000000000000F6 /* Sprite CutterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sprite CutterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -29,6 +40,13 @@
 				Info.plist,
 			);
 			target = 1BFEEAEA262386C300F13CB8 /* Sprite Cutter */;
+		};
+		5F00000000000000000000F1 /* Exceptions for "Sprite CutterUITests" folder in "Sprite CutterUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				UITests.entitlements,
+			);
+			target = 5F00000000000000000000F2 /* Sprite CutterUITests */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -41,10 +59,23 @@
 			path = "Sprite Cutter";
 			sourceTree = "<group>";
 		};
+		5F00000000000000000000F0 /* Sprite CutterUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5F00000000000000000000F1 /* Exceptions for "Sprite CutterUITests" folder in "Sprite CutterUITests" target */,
+			);
+			path = "Sprite CutterUITests";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1BFEEAE8262386C300F13CB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
+		5F00000000000000000000F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
 			);
@@ -64,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				1B7DF8392E24167F0071B353 /* Sprite Cutter */,
+				5F00000000000000000000F0 /* Sprite CutterUITests */,
 				1BCE739D267AFEDB008E33B6 /* Frameworks */,
 				1BFEEAEC262386C300F13CB8 /* Products */,
 			);
@@ -73,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				1BFEEAEB262386C300F13CB8 /* Sprite Cutter.app */,
+				5F00000000000000000000F6 /* Sprite CutterUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +132,27 @@
 			productReference = 1BFEEAEB262386C300F13CB8 /* Sprite Cutter.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5F00000000000000000000F2 /* Sprite CutterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F00000000000000000000F7 /* Build configuration list for PBXNativeTarget "Sprite CutterUITests" */;
+			buildPhases = (
+				5F00000000000000000000F3 /* Sources */,
+				5F00000000000000000000F4 /* Frameworks */,
+				5F00000000000000000000F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F00000000000000000000FA /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5F00000000000000000000F0 /* Sprite CutterUITests */,
+			);
+			name = "Sprite CutterUITests";
+			productName = "Sprite CutterUITests";
+			productReference = 5F00000000000000000000F6 /* Sprite CutterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -111,6 +165,10 @@
 				TargetAttributes = {
 					1BFEEAEA262386C300F13CB8 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					5F00000000000000000000F2 = {
+						CreatedOnToolsVersion = 27.0;
+						TestTargetID = 1BFEEAEA262386C300F13CB8;
 					};
 				};
 			};
@@ -130,12 +188,18 @@
 			projectRoot = "";
 			targets = (
 				1BFEEAEA262386C300F13CB8 /* Sprite Cutter */,
+				5F00000000000000000000F2 /* Sprite CutterUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1BFEEAE9262386C300F13CB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		5F00000000000000000000F5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
 			);
@@ -148,7 +212,20 @@
 			files = (
 			);
 		};
+		5F00000000000000000000F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F00000000000000000000FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BFEEAEA262386C300F13CB8 /* Sprite Cutter */;
+			targetProxy = 5F00000000000000000000FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1BFEEAF8262386C600F13CB8 /* Debug configuration for PBXProject "Sprite Cutter" */ = {
@@ -345,6 +422,56 @@
 			};
 			name = Release;
 		};
+		5F00000000000000000000F8 /* Debug configuration for PBXNativeTarget "Sprite CutterUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Sprite CutterUITests/UITests.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.3.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaydenirwin.spritecutter.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6,7";
+				TEST_TARGET_NAME = "Sprite Cutter";
+				XROS_DEPLOYMENT_TARGET = 27.0;
+			};
+			name = Debug;
+		};
+		5F00000000000000000000F9 /* Release configuration for PBXNativeTarget "Sprite CutterUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Sprite CutterUITests/UITests.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.3.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaydenirwin.spritecutter.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6,7";
+				TEST_TARGET_NAME = "Sprite Cutter";
+				XROS_DEPLOYMENT_TARGET = 27.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -361,6 +488,14 @@
 			buildConfigurations = (
 				1BFEEAFB262386C600F13CB8 /* Debug configuration for PBXNativeTarget "Sprite Cutter" */,
 				1BFEEAFC262386C600F13CB8 /* Release configuration for PBXNativeTarget "Sprite Cutter" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		5F00000000000000000000F7 /* Build configuration list for PBXNativeTarget "Sprite CutterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F00000000000000000000F8 /* Debug configuration for PBXNativeTarget "Sprite CutterUITests" */,
+				5F00000000000000000000F9 /* Release configuration for PBXNativeTarget "Sprite CutterUITests" */,
 			);
 			defaultConfigurationName = Release;
 		};

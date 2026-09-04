@@ -19,6 +19,9 @@ struct Sprite_CutterApp: App {
             } message: {
                 Text("Now let's celebrate by dropping in a spritesheet and trying out the new features!")
             }
+            .onAppear {
+                ScreenshotMode.pinWindowLayout() // no-op unless launched with -screenshotMode
+            }
             .onOpenURL { url in
                 if url.path().contains("spritecutter/appstoreevent") {
                     showingEvent = true
