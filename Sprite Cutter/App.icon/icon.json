@@ -4,8 +4,33 @@
     {
       "layers" : [
         {
+          "fill-specializations" : [
+            {
+              "value" : {
+                "solid" : "extended-gray:0.00000,1.00000"
+              }
+            },
+            {
+              "appearance" : "dark",
+              "value" : {
+                "solid" : "extended-gray:1.00000,1.00000"
+              }
+            },
+            {
+              "appearance" : "tinted",
+              "value" : {
+                "solid" : "srgb:1.00000,1.00000,1.00000,1.00000"
+              }
+            }
+          ],
           "image-name" : "App Icon Front.png",
-          "name" : "App Icon Front"
+          "name" : "App Icon Front",
+          "opacity-specializations" : [
+            {
+              "appearance" : "tinted",
+              "value" : 1
+            }
+          ]
         }
       ],
       "shadow" : {
@@ -21,8 +46,18 @@
       "layers" : [
         {
           "glass" : false,
-          "image-name" : "App Icon Back.png",
-          "name" : "App Icon Back"
+          "image-name" : "App.svg",
+          "name" : "App",
+          "opacity-specializations" : [
+            {
+              "appearance" : "dark",
+              "value" : 0.33
+            },
+            {
+              "appearance" : "tinted",
+              "value" : 0.33
+            }
+          ]
         }
       ],
       "shadow" : {
