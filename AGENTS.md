@@ -32,7 +32,10 @@ When editing UI or image code, check whether a change needs to be mirrored acros
 
 Automated: `Scripts/screenshots.sh [iphone|ipad|mac|vision]` (add `--upload` to send them to App
 Store Connect) wraps the shared runner in `Repos/Scripts/screenshots`, which owns simulator boot,
-the 9:41 status bar, and the Mac window capture. The app's part is `.screenshots.conf`,
+the 9:41 status bar, and the Mac window capture. Shots land in `Raw Assets/Screenshots/` as
+`Phone 6.9 1.png`, `Pad 13 1.png`, `Mac 1.png`, `Vision 1.png` — a symlink out to iCloud, so nothing
+lands in the repo — beside the `Old (Manual)/` archive of the hand-made ones. The app's part is
+`.screenshots.conf`,
 `ScreenshotMode.swift` (the demo spritesheet, switched on by the `-screenshotMode` launch argument),
 and `Sprite CutterUITests/ScreenshotTests.swift` (the walk, run by the `Screenshots` scheme — the
 only tests in the project). The walk relaunches with `-screenshotEmptyState` for the drop-target
