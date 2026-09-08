@@ -37,7 +37,7 @@ the 9:41 status bar, and the Mac window capture. Shots land in `Raw Assets/Scree
 lands in the repo — beside the `Old (Manual)/` archive of the hand-made ones. The app's part is
 `.screenshots.conf`,
 `ScreenshotMode.swift` (the demo spritesheet, switched on by the `-screenshotMode` launch argument),
-and `Sprite CutterUITests/ScreenshotTests.swift` (the walk, run by the `Screenshots` scheme — the
-only tests in the project). The walk relaunches with `-screenshotEmptyState` for the drop-target
-shot. The app is sandboxed, so the runner cannot clear its saved Mac window frame —
-`ScreenshotMode.pinWindowLayout()` pins it to the scene's `defaultSize` instead.
+and `Sprite CutterUITests/ScreenshotTests.swift` (run by the `Screenshots` scheme — the only tests
+in the project). One shot per platform: the loaded spritesheet. The app is sandboxed, so the runner
+cannot clear its saved Mac window frame — `ScreenshotMode.pinWindowLayout()` pins it to the scene's
+`defaultSize` instead.

@@ -11,12 +11,6 @@ enum ScreenshotMode {
     /// already loaded, and by `pinWindowLayout()`.
     static let isActive = ProcessInfo.processInfo.arguments.contains("-screenshotMode")
     
-    /// Whether this launch should arrive empty, for the shot of the drop target.
-    ///
-    /// Asked for with a second argument rather than by dropping `-screenshotMode`, so that shot is
-    /// still taken with the Mac window pinned to the same size as the one before it.
-    private static let isEmptyState = ProcessInfo.processInfo.arguments.contains("-screenshotEmptyState")
-    
     /// A spritesheet for the cutter to arrive holding, so the shot shows the app doing its job
     /// instead of its "Drop spritesheet here" empty state. `nil` outside a screenshot run.
     ///
@@ -25,7 +19,7 @@ enum ScreenshotMode {
     /// Studios', released CC0. Stored single-scale, so `size` is the sheet's size in pixels — which
     /// is what `Cutter` measures in.
     static var demoSpritesheet: UIImage? {
-        guard isActive, !isEmptyState else { return nil }
+        guard isActive else { return nil }
         return UIImage(named: "Demo Spritesheet")
     }
     

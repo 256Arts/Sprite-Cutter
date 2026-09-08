@@ -1,22 +1,21 @@
 import XCTest
 
-/// Drives the app through the screens that become App Store screenshots and attaches each one to the
-/// result bundle, where the shared `screenshots` runner collects them.
+/// Drives the app to the screen that becomes its App Store screenshot and attaches it to the result
+/// bundle, where the shared `screenshots` runner collects it.
 ///
-/// One test rather than one per screen: the shots are a walk through a single launch, and splitting
-/// them would pay the launch every time. This app is one screen, so the walk is short — a loaded
-/// spritesheet, then the drop target it starts from. Nothing is tapped along the way, which is why
-/// there is none of the click-retry machinery a navigating walk needs on Mac Catalyst.
+/// One shot per platform: the app is a single screen, and the only other state it has is the empty
+/// drop target it starts from — which shows nothing of what the app does.
 @MainActor
 final class ScreenshotTests: XCTestCase {
     
-    private var app: XCUIApplication!
-    
     func testCaptureAppStoreScreenshots() throws {
         continueAfterFailure = false
-        app = XCUIApplication()
         
-        launch(arguments: ["-screenshotMode"])
+        let app = XCUIApplication()
+        app.launchArguments = ["-screenshotMode"]
+        app.launch()
+        bringToFront(app)
+        
         // The seeded sheet is the only image in the app, and it arrives with the launch rather than
         // after one — so its presence is what says the seed landed.
         let spritesheet = app.images["Spritesheet"]
@@ -27,44 +26,29 @@ final class ScreenshotTests: XCTestCase {
         XCTAssertEqual(app.textFields["Columns"].value as? String, "7",
                        "the demo sheet did not divide into 7 columns — is the asset still single scale?")
         settle()
-        capture("01-spritesheet")
-        
-        // Relaunched rather than cleared: the Clear button is iOS-only, and passing the argument
-        // keeps the Mac window pinned to the size the shot before it used.
-        launch(arguments: ["-screenshotMode", "-screenshotEmptyState"])
-        XCTAssertTrue(app.staticTexts["Drop spritesheet here"].waitForExistence(timeout: 30),
-                      "the drop target never appeared\n\(app.debugDescription)")
-        settle()
-        capture("02-drop")
+        capture(app, named: "01-spritesheet")
     }
     
     // MARK: - Driving
-    
-    private func launch(arguments: [String]) {
-        app.terminate()
-        app.launchArguments = arguments
-        app.launch()
-        bringToFront()
-    }
     
     /// Makes the app's window key before photographing it.
     ///
     /// A Mac window that is not frontmost comes back `Disabled` in the element tree. Nothing steals
     /// focus on a simulator, so this is a Mac-only concern.
-    private func bringToFront() {
+    private func bringToFront(_ app: XCUIApplication) {
         #if os(macOS)
         app.activate()
         #endif
     }
     
-    /// Animations have no element to wait on, so the shots pause instead.
+    /// Animations have no element to wait on, so the shot pauses instead.
     private func settle(seconds: TimeInterval = 2) {
         Thread.sleep(forTimeInterval: seconds)
     }
     
     // MARK: - Capturing
     
-    private func capture(_ name: String) {
+    private func capture(_ app: XCUIApplication, named name: String) {
         #if os(macOS) || targetEnvironment(macCatalyst) || os(visionOS)
         // Both of these are photographed from outside the test: the Mac because only the shell has
         // Screen Recording, visionOS because it has no screen for `XCUIScreen` to return (the call
