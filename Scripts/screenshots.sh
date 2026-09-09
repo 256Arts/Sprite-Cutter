@@ -10,16 +10,12 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+SHARED="${APP_SCRIPTS_DIR:-$HOME/Library/Mobile Documents/com~apple~CloudDocs/Repos/Scripts}"
 
-# The runner lives in iCloud next to the repos. Both defaults are places it has lived, so a checkout
-# on a machine that has not caught up still finds it; APP_SCRIPTS_DIR wins over either.
-for candidate in "${APP_SCRIPTS_DIR:-}" "$ICLOUD/Repos/Scripts" "$ICLOUD/Apps/Scripts"; do
-    if [ -n "$candidate" ] && [ -x "$candidate/screenshots" ]; then
-        exec "$candidate/screenshots" "$@"
-    fi
-done
+if [ ! -x "$SHARED/screenshots" ]; then
+    echo "shared runner not found at $SHARED/screenshots" >&2
+    echo "(it lives in iCloud; set APP_SCRIPTS_DIR if yours is elsewhere)" >&2
+    exit 2
+fi
 
-echo "shared runner not found in ${APP_SCRIPTS_DIR:+$APP_SCRIPTS_DIR, }$ICLOUD/Repos/Scripts, $ICLOUD/Apps/Scripts" >&2
-echo "(it lives in iCloud; set APP_SCRIPTS_DIR if yours is elsewhere)" >&2
-exit 2
+exec "$SHARED/screenshots" "$@"
