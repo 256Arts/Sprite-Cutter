@@ -2,3 +2,7 @@
 .conductor/settings.local.toml
 .DS_Store
 build/
+
+# Xcode state, build products, agent scratchpad, macOS
+xcuserdata/
+DerivedData/
