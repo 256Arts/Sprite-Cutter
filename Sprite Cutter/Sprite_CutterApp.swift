@@ -27,6 +27,7 @@ struct Sprite_CutterApp: App {
                     showingEvent = true
                 }
             }
+            .screenshotModeStatus()
         }
         .defaultSize(width: 500, height: 650)
         .commands {

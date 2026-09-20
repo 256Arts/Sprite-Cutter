@@ -1,4 +1,7 @@
 import XCTest
+#if canImport(UIKit)
+import UIKit
+#endif
 
 /// Drives the app to the screen that becomes its App Store screenshot and attaches it to the result
 /// bundle, where the shared `screenshots` runner collects it.
@@ -7,20 +10,22 @@ import XCTest
 /// drop target it starts from — which shows nothing of what the app does.
 @MainActor
 final class ScreenshotTests: XCTestCase {
-    
+
+    private var app: XCUIApplication!
+
     func testCaptureAppStoreScreenshots() throws {
         continueAfterFailure = false
-        
-        let app = XCUIApplication()
+
+        app = XCUIApplication()
         app.launchArguments = ["-screenshotMode"]
         app.launch()
         bringToFront(app)
-        
+        checkSeedIsThrowaway()
+
         // The seeded sheet is the only image in the app, and it arrives with the launch rather than
         // after one — so its presence is what says the seed landed.
         let spritesheet = app.images["Spritesheet"]
-        XCTAssertTrue(spritesheet.waitForExistence(timeout: 60),
-                      "seeded content never appeared\n\(app.debugDescription)")
+        guard waitFor(spritesheet, "the seeded spritesheet", shot: "01-spritesheet", timeout: 60) else { return }
         // 112x80 of 16x16 sprites. A different number here means the sheet came back at the wrong
         // scale, which the shot would show as the wrong sprite size rather than as a missing image.
         XCTAssertEqual(app.textFields["Columns"].value as? String, "7",
@@ -28,8 +33,71 @@ final class ScreenshotTests: XCTestCase {
         settle()
         capture(app, named: "01-spritesheet")
     }
-    
+
+    // MARK: - The seed
+
+    /// What the app said it prepared, read out of the accessibility tree.
+    ///
+    /// The app hangs `ScreenshotMode.status` on its root view (`.screenshotModeStatus()`). A walk
+    /// that cannot find it is running against a build that has not adopted that modifier, which is
+    /// worth saying plainly rather than reporting as an empty seed.
+    private var seedStatus: String {
+        let label = app.descendants(matching: .any)["ScreenshotMode.Status"]
+        guard label.waitForExistence(timeout: 30) else {
+            return "no ScreenshotMode.Status element — add .screenshotModeStatus() to the app's root view"
+        }
+        // A SwiftUI `Text` reaches XCUITest as the element's *value* on macOS and as its *label* on
+        // iOS, so take whichever is filled in rather than betting on one.
+        if let value = label.value as? String, !value.isEmpty { return value }
+        return label.label
+    }
+
+    /// Stops the walk when the app did not prepare a spritesheet to photograph.
+    ///
+    /// The walk that followed would otherwise photograph the empty drop target and fail on a missing
+    /// image, which says nothing about why. Read the reason instead, before the first shot.
+    private func checkSeedIsThrowaway() {
+        let status = seedStatus
+        print("SCREENSHOT MODE: \(status)")
+        guard status.hasPrefix("ready") else {
+            attach(XCTAttachment(string: app.debugDescription), named: "element-tree")
+            return XCTFail("the app did not prepare a spritesheet, so there is nothing to photograph — \(status)")
+        }
+    }
+
+    private static var platform: String {
+        #if os(macOS)
+        "macOS"
+        #elseif targetEnvironment(macCatalyst)
+        "Mac Catalyst"
+        #elseif os(visionOS)
+        "visionOS"
+        #else
+        UIDevice.current.userInterfaceIdiom == .pad ? "iPadOS" : "iOS"
+        #endif
+    }
+
+    /// Which simulator this was, for a failure read days after the run's own log is gone.
+    private static var device: String {
+        ProcessInfo.processInfo.environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "this machine"
+    }
+
     // MARK: - Driving
+
+    /// Waits for `element`, and on a miss fails with the platform, the device, what the walk was
+    /// waiting for, and what the app reported it seeded — so a failure names itself instead of
+    /// reading as "seeded content never appeared".
+    private func waitFor(_ element: XCUIElement, _ description: String, shot: String, timeout: TimeInterval) -> Bool {
+        guard element.waitForExistence(timeout: timeout) else {
+            attach(XCTAttachment(string: app.debugDescription), named: "element-tree")
+            XCTFail("""
+                \(shot): never found \(description) in \(Int(timeout))s on \(Self.platform), \(Self.device).
+                The app reported: \(seedStatus)
+                """)
+            return false
+        }
+        return true
+    }
     
     /// Makes the app's window key before photographing it.
     ///
