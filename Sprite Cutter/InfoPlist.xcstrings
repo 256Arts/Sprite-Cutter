@@ -1,0 +1,48 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Sprite Cutter"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sprite Cutter"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Sprite Cutter"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Sprite Cutter"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Sprite Cutter"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Sprite Cutter"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

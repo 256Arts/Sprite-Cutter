@@ -1,0 +1,1270 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "Clear" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Löschen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Borrar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Effacer"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "クリア"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "清除"
+          }
+        }
+      }
+    },
+    "Columns" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Spalten"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Columnas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Colonnes"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "列"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "列"
+          }
+        }
+      }
+    },
+    "Contribute on GitHub" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Auf GitHub mitwirken"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Contribuir en GitHub"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Contribuer sur GitHub"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "GitHubで貢献"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "在 GitHub 上参与贡献"
+          }
+        }
+      }
+    },
+    "Could not read sprite size" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Spritegröße konnte nicht gelesen werden"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "No se pudo leer el tamaño del sprite"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Impossible de lire la taille des sprites"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "スプライトのサイズを読み取れませんでした"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "无法读取精灵尺寸"
+          }
+        }
+      }
+    },
+    "Cut" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Schneiden"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Cortar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Découper"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "カット"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "切割"
+          }
+        }
+      }
+    },
+    "Cut %@ into %lld by %lld sprites" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "%1$@ in %2$lld × %3$lld Sprites schneiden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cut %1$@ into %2$lld by %3$lld sprites"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Cortar %1$@ en %2$lld × %3$lld sprites"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Découper %1$@ en %2$lld × %3$lld sprites"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "%1$@を%2$lld×%3$lldのスプライトにカット"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "将 %1$@ 切割为 %2$lld × %3$lld 个精灵"
+          }
+        }
+      }
+    },
+    "Cut ${image} into ${spriteWidth} by ${spriteHeight} sprites" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "${image} in ${spriteWidth} × ${spriteHeight} Sprites schneiden"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Cortar ${image} en ${spriteWidth} × ${spriteHeight} sprites"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Découper ${image} en ${spriteWidth} × ${spriteHeight} sprites"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "${image}を${spriteWidth}×${spriteHeight}のスプライトにカット"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "将 ${image} 切割为 ${spriteWidth} × ${spriteHeight} 个精灵"
+          }
+        }
+      }
+    },
+    "Cut a spritesheet image into multiple sprites" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Ein Spritesheet-Bild in mehrere Sprites schneiden"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Cortar una hoja de sprites en varios sprites"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Découper une feuille de sprites en plusieurs sprites"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "スプライトシート画像を複数のスプライトにカット"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "将精灵表图像切割为多个精灵"
+          }
+        }
+      }
+    },
+    "Cut Sprites" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Sprites schneiden"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Cortar sprites"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Découper les sprites"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "スプライトをカット"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "切割精灵"
+          }
+        }
+      }
+    },
+    "Developer Website" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Entwickler-Website"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Sitio web del desarrollador"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Site web du développeur"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "デベロッパのWebサイト"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "开发者网站"
+          }
+        }
+      }
+    },
+    "Drop spritesheet here" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Spritesheet hier ablegen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Suelta aquí una hoja de sprites"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Déposez une feuille de sprites ici"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "ここにスプライトシートをドロップ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "将精灵表拖放到此处"
+          }
+        }
+      }
+    },
+    "Event Intro" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Event-Einführung"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Presentación del evento"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Présentation de l’événement"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "イベントの紹介"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "活动介绍"
+          }
+        }
+      }
+    },
+    "Export Error" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Exportfehler"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Error de exportación"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Erreur d’exportation"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "書き出しエラー"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "导出错误"
+          }
+        }
+      }
+    },
+    "Failed to cut sprites" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Sprites konnten nicht geschnitten werden"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "No se pudieron cortar los sprites"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Impossible de découper les sprites"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "スプライトをカットできませんでした"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "无法切割精灵"
+          }
+        }
+      }
+    },
+    "Failed to load image" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Bild konnte nicht geladen werden"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "No se pudo cargar la imagen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Impossible de charger l’image"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "画像を読み込めませんでした"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "无法载入图像"
+          }
+        }
+      }
+    },
+    "Height" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Höhe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Alto"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Hauteur"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "高さ"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "高度"
+          }
+        }
+      }
+    },
+    "Image" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Bild"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Imagen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Image"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "画像"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "图像"
+          }
+        }
+      }
+    },
+    "Import Error" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Importfehler"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Error de importación"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Erreur d’importation"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "読み込みエラー"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "导入错误"
+          }
+        }
+      }
+    },
+    "Import Spritesheet" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Spritesheet importieren"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Importar hoja de sprites"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Importer une feuille de sprites"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "スプライトシートを読み込む"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "导入精灵表"
+          }
+        }
+      }
+    },
+    "Input image too large. (Max: 512px x 512px)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Eingabebild zu groß. (Max.: 512 × 512 px)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "La imagen es demasiado grande. (Máx.: 512 × 512 px)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Image d’entrée trop grande. (Max. : 512 × 512 px)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "入力画像が大きすぎます。（最大：512×512ピクセル）"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "输入图像过大。（最大：512 × 512 像素）"
+          }
+        }
+      }
+    },
+    "Join Community" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Community beitreten"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Unirse a la comunidad"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Rejoindre la communauté"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "コミュニティに参加"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "加入社区"
+          }
+        }
+      }
+    },
+    "Now let's celebrate by dropping in a spritesheet and trying out the new features!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Feiere jetzt mit: Zieh ein Spritesheet hinein und probiere die neuen Funktionen aus!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "¡Celébralo soltando una hoja de sprites y probando las nuevas funciones!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Pour fêter ça, déposez une feuille de sprites et essayez les nouvelles fonctionnalités !"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "さっそくスプライトシートをドロップして、新機能を試してみましょう！"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "现在就拖入一张精灵表，试试新功能来庆祝一下吧！"
+          }
+        }
+      }
+    },
+    "Number of Sprites:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Anzahl der Sprites:"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Número de sprites:"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Nombre de sprites :"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "スプライトの数："
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "精灵数量："
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "OK"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Aceptar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "OK"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "OK"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "好"
+          }
+        }
+      }
+    },
+    "Rows" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Zeilen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Filas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Lignes"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "行"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "行"
+          }
+        }
+      }
+    },
+    "Spacing" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Abstand"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Espaciado"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Espacement"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "間隔"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "间距"
+          }
+        }
+      }
+    },
+    "Spacing:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Abstand:"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Espaciado:"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Espacement :"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "間隔："
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "间距："
+          }
+        }
+      }
+    },
+    "Sprite Size:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Spritegröße:"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Tamaño del sprite:"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Taille des sprites :"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "スプライトのサイズ："
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "精灵尺寸："
+          }
+        }
+      }
+    },
+    "Sprites cut" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Sprites geschnitten"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Sprites cortados"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Sprites découpés"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "スプライトをカットしました"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "精灵已切割"
+          }
+        }
+      }
+    },
+    "Spritesheet" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Spritesheet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Hoja de sprites"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Feuille de sprites"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "スプライトシート"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "精灵表"
+          }
+        }
+      }
+    },
+    "What image do you want to cut?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Welches Bild möchtest du schneiden?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "¿Qué imagen quieres cortar?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Quelle image voulez-vous découper ?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "どの画像をカットしますか？"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "要切割哪张图像？"
+          }
+        }
+      }
+    },
+    "What is the sprites heights?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Wie hoch sind die Sprites?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "¿Qué alto tienen los sprites?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Quelle est la hauteur des sprites ?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "スプライトの高さは？"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "精灵的高度是多少？"
+          }
+        }
+      }
+    },
+    "What is the sprites widths?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Wie breit sind die Sprites?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "¿Qué ancho tienen los sprites?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Quelle est la largeur des sprites ?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "スプライトの幅は？"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "精灵的宽度是多少？"
+          }
+        }
+      }
+    },
+    "Width" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Breite"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Ancho"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Largeur"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "幅"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "宽度"
+          }
+        }
+      }
+    },
+    "x" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "×"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "×"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "×"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "×"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "×"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
