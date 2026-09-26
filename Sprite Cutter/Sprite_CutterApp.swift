@@ -19,17 +19,21 @@ struct Sprite_CutterApp: App {
             } message: {
                 Text("Now let's celebrate by dropping in a spritesheet and trying out the new features!")
             }
-            .onAppear {
-                ScreenshotMode.pinWindowLayout() // no-op unless launched with -screenshotMode
-            }
             .onOpenURL { url in
                 if url.path().contains("spritecutter/appstoreevent") {
                     showingEvent = true
                 }
             }
-            .screenshotModeStatus()
+            .screenshotWindowSize()   // a no-op unless launched with -screenshotMode
+            .screenshotModeStatus()   // a no-op unless launched with -screenshotMode
         }
         .defaultSize(width: 500, height: 650)
+        #if os(macOS)
+        // `.contentSize` only for a screenshot run, where `screenshotWindowSize()` has fixed the
+        // content and the window has to take it.
+        .windowResizability(ScreenshotMode.isActive ? .contentSize : .automatic)
+        .restorationBehavior(ScreenshotMode.isActive ? .disabled : .automatic)
+        #endif
         .commands {
             CommandGroup(after: .help) {
                 Self.links()

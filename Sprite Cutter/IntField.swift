@@ -12,7 +12,9 @@ struct IntField: View {
             value = Int(newValue) ?? 1
         }))
         .textFieldStyle(.roundedBorder)
+        #if !os(macOS)
         .keyboardType(.numberPad)
+        #endif
         .multilineTextAlignment(.trailing)
         .frame(width: 80)
     }

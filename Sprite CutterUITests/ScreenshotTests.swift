@@ -20,6 +20,9 @@ final class ScreenshotTests: XCTestCase {
         app.launchArguments = ["-screenshotMode"]
         app.launch()
         bringToFront(app)
+        #if os(macOS)
+        openWindowIfNeeded()
+        #endif
         checkSeedIsThrowaway()
 
         // The seeded sheet is the only image in the app, and it arrives with the launch rather than
@@ -68,8 +71,6 @@ final class ScreenshotTests: XCTestCase {
     private static var platform: String {
         #if os(macOS)
         "macOS"
-        #elseif targetEnvironment(macCatalyst)
-        "Mac Catalyst"
         #elseif os(visionOS)
         "visionOS"
         #else
@@ -109,6 +110,20 @@ final class ScreenshotTests: XCTestCase {
         #endif
     }
     
+    #if os(macOS)
+    /// Opens a window when the launch came up without one.
+    ///
+    /// `XCUIApplication.launch()` launches a Mac app in the *background*, and AppKit gives a
+    /// background launch no window — only a reopen (a Dock icon click) builds it, which a test
+    /// runner cannot send. So the walk asks for the window itself, with the app's own New Window.
+    /// Waiting first, so ⌘N cannot beat the launch's own window into the tree and open a second.
+    private func openWindowIfNeeded() {
+        if app.windows.firstMatch.waitForExistence(timeout: 10) { return }
+        app.typeKey("n", modifierFlags: .command)
+        XCTAssert(app.windows.firstMatch.waitForExistence(timeout: 15), "no window after ⌘N — the app launched with none")
+    }
+    #endif
+    
     /// Animations have no element to wait on, so the shot pauses instead.
     private func settle(seconds: TimeInterval = 2) {
         Thread.sleep(forTimeInterval: seconds)
@@ -123,7 +138,7 @@ final class ScreenshotTests: XCTestCase {
         // a machine-wide lock so that cannot happen; this is the check that it held.
         XCTAssertEqual(app.state, .runningForeground,
                        "\(name): the app under test was not frontmost — another app has this device")
-        #if os(macOS) || targetEnvironment(macCatalyst) || os(visionOS)
+        #if os(macOS) || os(visionOS)
         // Both of these are photographed from outside the test: the Mac because only the shell has
         // Screen Recording, visionOS because it has no screen for `XCUIScreen` to return (the call
         // comes back 1x1) and its window alone is neither the store's size nor its framing.
@@ -144,7 +159,7 @@ final class ScreenshotTests: XCTestCase {
         add(attachment)
     }
     
-    #if os(macOS) || targetEnvironment(macCatalyst) || os(visionOS)
+    #if os(macOS) || os(visionOS)
     
     /// Asks the shell running the tests to take the picture, and waits for it.
     ///

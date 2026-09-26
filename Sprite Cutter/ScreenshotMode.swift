@@ -8,7 +8,7 @@ import SwiftUI
 enum ScreenshotMode {
     
     /// Whether this launch is a screenshot run. Read by `CutterView`, to arrive with a spritesheet
-    /// already loaded, and by `pinWindowLayout()`.
+    /// already loaded, and by `screenshotWindowSize()`.
     static let isActive = ProcessInfo.processInfo.arguments.contains("-screenshotMode")
     
     /// A spritesheet for the cutter to arrive holding, so the shot shows the app doing its job
@@ -16,9 +16,9 @@ enum ScreenshotMode {
     ///
     /// 112x80 of 16x16 sprites, so it divides exactly at the cutter's own default sprite size and
     /// the counts read 7 by 5 without the walk having to type anything. The art is Gentle Cat
-    /// Studios', released CC0. Stored single-scale, so `size` is the sheet's size in pixels — which
-    /// is what `Cutter` measures in.
-    static let demoSpritesheet: UIImage? = isActive ? UIImage(named: "Demo Spritesheet") : nil
+    /// Studios', released CC0. Loaded as a `CGImage`, so its size is in pixels — which is what
+    /// `Cutter` measures in.
+    static let demoSpritesheet: CGImage? = isActive ? CGImage.named("Demo Spritesheet") : nil
 
     // MARK: - Saying what happened
 
@@ -34,30 +34,40 @@ enum ScreenshotMode {
         guard let image = demoSpritesheet else {
             return "REFUSED — no \"Demo Spritesheet\" asset in the bundle"
         }
-        let width = Int(image.size.width), height = Int(image.size.height)
+        let width = image.width, height = image.height
         return "ready — no persistent store to seed; loaded a \(width)x\(height) demo spritesheet (\(width / 16)x\(height / 16) sprites)"
     }
 
-    /// Pins the Mac window to the scene's own `defaultSize`.
+    /// The Mac window's content size in a screenshot run — the scene's own `defaultSize`.
     ///
-    /// The runner clears the app's saved `NSWindow Frame` defaults before a Mac run, but `defaults`
-    /// resolves a sandboxed app's domain to its container, and this app is sandboxed — so it finds
-    /// nothing to clear and the window comes back at whatever size it was last dragged to. Asking
-    /// for the geometry from inside the app is then the only deterministic option.
-    @MainActor
-    static func pinWindowLayout() {
-        guard isActive else { return }
-        #if targetEnvironment(macCatalyst)
-        let frame = CGRect(x: 0, y: 0, width: 500, height: 650) // the scene's own `defaultSize`
-        for case let scene as UIWindowScene in UIApplication.shared.connectedScenes {
-            scene.requestGeometryUpdate(.Mac(systemFrame: frame))
-        }
-        #endif
-    }
+    /// Applied by `screenshotWindowSize()` rather than by `.defaultSize`, which decides only the size
+    /// of a window macOS has no remembered frame for.
+    static let macWindowSize = CGSize(width: 500, height: 650)
 
 }
 
 extension View {
+
+    /// Pins a screenshot run's Mac window to `ScreenshotMode.macWindowSize`.
+    ///
+    /// The runner clears the app's saved `NSWindow Frame` defaults before a Mac run, but `defaults`
+    /// resolves a sandboxed app's domain to its container, and this app is sandboxed — so it finds
+    /// nothing to clear and macOS restores whatever size the window was last dragged to. Fixing the
+    /// *content's* size leaves the window nothing to restore to, as long as the scene also takes
+    /// `.windowResizability(.contentSize)`, which `Sprite_CutterApp` gives it for a screenshot run
+    /// only.
+    @ViewBuilder
+    func screenshotWindowSize() -> some View {
+        #if os(macOS)
+        if ScreenshotMode.isActive {
+            frame(width: ScreenshotMode.macWindowSize.width, height: ScreenshotMode.macWindowSize.height)
+        } else {
+            self
+        }
+        #else
+        self
+        #endif
+    }
 
     /// Carries `ScreenshotMode.status` into the accessibility tree, where the walk reads it.
     ///

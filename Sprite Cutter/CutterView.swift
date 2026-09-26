@@ -2,14 +2,12 @@ import SwiftUI
 
 struct CutterView: View, DropDelegate {
 
-    #if targetEnvironment(macCatalyst)
-    let isCatalyst = true
+    /// Desktop lays the cutter's controls out as a compact inspector rather than as the large
+    /// touch controls an iPhone needs.
+    #if os(macOS)
+    let isDesktop = true
     #else
-    let isCatalyst = false
-    #endif
-    
-    #if targetEnvironment(macCatalyst)
-    @Environment(\.openURL) private var openURL
+    let isDesktop = false
     #endif
     
     @State var cutter = Cutter(image: ScreenshotMode.demoSpritesheet) // nil unless launched with -screenshotMode
@@ -24,12 +22,12 @@ struct CutterView: View, DropDelegate {
             ZStack {
                 Color.clear
                 if let image = cutter.image {
-                    Image(uiImage: image)
+                    // At 1× so one source pixel maps to one point before `.resizable()` scales it.
+                    Image(image, scale: 1, label: Text("Spritesheet"))
                         .resizable()
                         .interpolation(.none)
                         .aspectRatio(contentMode: .fit)
                         .frame(idealWidth: .infinity, maxWidth: .infinity, idealHeight: .infinity, maxHeight: .infinity)
-                        .accessibilityLabel("Spritesheet")
                 } else {
                     VStack(spacing: 8) {
                         Image(systemName: "square.and.arrow.down")
@@ -45,14 +43,14 @@ struct CutterView: View, DropDelegate {
                 showingImport = true
             }
             .onDrop(of: [.image], delegate: self)
-            #if targetEnvironment(macCatalyst)
+            #if os(macOS)
             Divider()
             #endif
             VStack {
                 HStack {
                     Text("Sprite Size:")
-                        .font(Font.system(size: isCatalyst ? 13 : 18, weight: isCatalyst ? .regular : .bold))
-                        .foregroundStyle(isCatalyst ? Color.secondary : Color.primary)
+                        .font(Font.system(size: isDesktop ? 13 : 18, weight: isDesktop ? .regular : .bold))
+                        .foregroundStyle(isDesktop ? Color.secondary : Color.primary)
                     Spacer()
                     IntField(title: "Width", value: $cutter.spriteSize.width)
                     Text("x")
@@ -61,8 +59,8 @@ struct CutterView: View, DropDelegate {
                 }
                 HStack {
                     Text("Number of Sprites:")
-                        .font(Font.system(size: isCatalyst ? 13 : 18, weight: isCatalyst ? .regular : .bold))
-                        .foregroundStyle(isCatalyst ? Color.secondary : Color.primary)
+                        .font(Font.system(size: isDesktop ? 13 : 18, weight: isDesktop ? .regular : .bold))
+                        .foregroundStyle(isDesktop ? Color.secondary : Color.primary)
                     Spacer()
                     IntField(title: "Columns", value: $cutter.spriteCounts.x)
                     Text("x")
@@ -71,10 +69,10 @@ struct CutterView: View, DropDelegate {
                 }
                 HStack {
                     Text("Spacing:")
-                        .font(Font.system(size: isCatalyst ? 13 : 18, weight: isCatalyst ? .regular : .bold))
-                        .foregroundStyle(isCatalyst ? Color.secondary : Color.primary)
+                        .font(Font.system(size: isDesktop ? 13 : 18, weight: isDesktop ? .regular : .bold))
+                        .foregroundStyle(isDesktop ? Color.secondary : Color.primary)
                     Spacer()
-                    #if targetEnvironment(macCatalyst)
+                    #if os(macOS)
                     IntField(title: "Spacing", value: $cutter.spacing)
                     #else
                     Text("\(cutter.spacing)")
@@ -84,7 +82,7 @@ struct CutterView: View, DropDelegate {
                 }
             }
             .padding()
-            #if targetEnvironment(macCatalyst)
+            #if os(macOS)
             Divider()
             HStack {
                 Spacer()
@@ -115,12 +113,20 @@ struct CutterView: View, DropDelegate {
             #endif
         }
         .toolbar {
-            #if !targetEnvironment(macCatalyst)
+            #if os(macOS)
+            ToolbarItem(placement: .primaryAction) {
+                Button("Import Spritesheet", systemImage: "square.and.arrow.down") {
+                    showingImport = true
+                }
+                .keyboardShortcut("o")
+            }
+            #else
             ToolbarItem(placement: .topBarPinnedTrailing) {
                 Button("Import Spritesheet", systemImage: "square.and.arrow.down") {
                     showingImport = true
                 }
             }
+            #endif
             ToolbarItem {
                 Button("Clear", systemImage: "xmark") {
                     cutter.image = nil
@@ -130,13 +136,15 @@ struct CutterView: View, DropDelegate {
             #if os(iOS)
             .visibilityPriority(.low)
             #endif
+            // The Mac has these in its Help menu instead.
+            #if !os(macOS)
             ToolbarOverflowMenu {
                 Sprite_CutterApp.links()
             }
             #endif
         }
         .fileImporter(isPresented: $showingImport, allowedContentTypes: [.image], onCompletion: { result in
-            guard let url = try? result.get(), url.startAccessingSecurityScopedResource(), let image = UIImage(contentsOfFile: url.path) else {
+            guard let url = try? result.get(), url.startAccessingSecurityScopedResource(), let image = CGImage.loading(contentsOf: url) else {
                 showingImportError = true
                 return
             }
@@ -157,7 +165,7 @@ struct CutterView: View, DropDelegate {
     func cutDocuments() throws -> [ImageDocument] {
         var documents: [ImageDocument] = []
         for (index, image) in try cutter.cut().enumerated() {
-            documents.append(.init(image: image, number: index + 1))
+            documents.append(.init(image: image, filename: "Sprite \(index + 1)"))
         }
         return documents
     }
@@ -165,9 +173,10 @@ struct CutterView: View, DropDelegate {
     func performDrop(info: DropInfo) -> Bool {
         let items = info.itemProviders(for: [.image])
         for item in items {
-            item.loadObject(ofClass: UIImage.self) { (image, error) in
+            item.loadObject(ofClass: PlatformImage.self) { (image, error) in
+                let cgImage = (image as? PlatformImage)?.cgImage
                 DispatchQueue.main.async {
-                    self.cutter.image = image as? UIImage
+                    self.cutter.image = cgImage
                 }
             }
         }

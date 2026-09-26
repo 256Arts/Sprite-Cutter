@@ -7,15 +7,17 @@ A small SwiftUI app for cutting a sprite-sheet image into individual sprite file
 ## Platforms
 
 Built from one target with `#if` compilation conditions, not separate targets:
-- `canImport(UIKit)` vs `AppKit` — image type is `UIImage` on iOS-family, `NSImage` on macOS.
-- `targetEnvironment(macCatalyst)` — Catalyst gets a denser layout, an editable spacing `IntField`, and an explicit "Cut" button row; other platforms use a stepper + full-width button.
-- `os(visionOS)` uses `.borderedProminent`; other non-Catalyst platforms use `.glassProminent`.
+- The Mac build is a **native macOS app**, not Catalyst (`SUPPORTS_MACCATALYST = NO`); don't add `targetEnvironment(macCatalyst)` checks.
+- Sprite pixels travel as `CGImage` everywhere. `PlatformImage` (`UIImage`/`NSImage`) is only for asset lookup and `NSItemProvider`.
+- `os(macOS)` — denser layout, an editable spacing `IntField`, a toolbar Import (⌘O), links in the Help menu, and an explicit "Cut" button row; other platforms use a stepper + full-width button and a toolbar overflow menu.
+- `os(visionOS)` uses `.borderedProminent`; iOS uses `.glassProminent`.
 
 When editing UI or image code, check whether a change needs to be mirrored across these branches.
 
 ## Architecture
 
-- `Cutter.swift` — **the core, platform-agnostic engine.** `Cutter` struct holds the source image, `spriteSize` (`PixelSize`), and `spacing`. Computes `spriteCounts` (cols × rows) bidirectionally — setting either the size or the count recomputes the other. `cut()` crops the image via `cgImage.cropping(to:)` row-by-row and returns an array of images. This is the logic shared with Sprite Catalog.
+- `Cutter.swift` — **the core, platform-agnostic engine.** `Cutter` struct holds the source `CGImage`, `spriteSize` (`PixelSize`), and `spacing`. Computes `spriteCounts` (cols × rows) bidirectionally — setting either the size or the count recomputes the other. `cut()` crops via `cropping(to:)` row-by-row and returns `[CGImage]`. Identical to Sprite Catalog's `Models/Cutter.swift` — keep it that way.
+- `PlatformImage.swift` — `CGImage` loading / PNG encoding helpers (a subset of Sprite Catalog's file of the same name).
 - `CutterView.swift` — main view + `DropDelegate`. Handles drag-and-drop, file import (`.fileImporter`), and export (`.fileExporter` writing `[ImageDocument]`). Exported sprites are named `Sprite 1`, `Sprite 2`, …
 - `ImageDocument.swift` — `FileDocument` wrapper that serializes a single sprite to PNG.
 - `IntField.swift` — reusable numeric `TextField` (numpad, defaults invalid input to `1`).
@@ -39,5 +41,5 @@ lands in the repo — beside the `Old (Manual)/` archive of the hand-made ones. 
 `ScreenshotMode.swift` (the demo spritesheet, switched on by the `-screenshotMode` launch argument),
 and `Sprite CutterUITests/ScreenshotTests.swift` (run by the `Screenshots` scheme — the only tests
 in the project). One shot per platform: the loaded spritesheet. The app is sandboxed, so the runner
-cannot clear its saved Mac window frame — `ScreenshotMode.pinWindowLayout()` pins it to the scene's
-`defaultSize` instead.
+cannot clear its saved Mac window frame — `screenshotWindowSize()` pins the content to the scene's
+`defaultSize` and `.windowResizability(.contentSize)` makes the window take it.
