@@ -113,20 +113,14 @@ struct CutterView: View, DropDelegate {
             #endif
         }
         .toolbar {
-            #if os(macOS)
-            ToolbarItem(placement: .primaryAction) {
-                Button("Import Spritesheet", systemImage: "square.and.arrow.down") {
-                    showingImport = true
-                }
-                .keyboardShortcut("o")
-            }
-            #else
+            // The Mac keeps a bare title bar: its drop target imports on click, and its links live in
+            // the Help menu.
+            #if !os(macOS)
             ToolbarItem(placement: .topBarPinnedTrailing) {
                 Button("Import Spritesheet", systemImage: "square.and.arrow.down") {
                     showingImport = true
                 }
             }
-            #endif
             ToolbarItem {
                 Button("Clear", systemImage: "xmark") {
                     cutter.image = nil
@@ -136,8 +130,6 @@ struct CutterView: View, DropDelegate {
             #if os(iOS)
             .visibilityPriority(.low)
             #endif
-            // The Mac has these in its Help menu instead.
-            #if !os(macOS)
             ToolbarOverflowMenu {
                 Sprite_CutterApp.links()
             }
