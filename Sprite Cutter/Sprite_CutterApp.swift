@@ -35,6 +35,7 @@ struct Sprite_CutterApp: App {
         .restorationBehavior(ScreenshotMode.isActive ? .disabled : .automatic)
         #endif
         .commands {
+            ImportCommand()
             CommandGroup(after: .help) {
                 Self.links()
             }
@@ -54,4 +55,26 @@ struct Sprite_CutterApp: App {
         }
     }
     
+}
+
+/// File > Import Spritesheet… (⌘O). A `Commands` builder cannot reach a view's `@State`, so it flips
+/// the focused window's import flag, which `CutterView` publishes as a focused scene value.
+private struct ImportCommand: Commands {
+    
+    @FocusedBinding(\.showingImport) private var showingImport
+    
+    var body: some Commands {
+        CommandGroup(after: .newItem) {
+            Button("Import Spritesheet…") {
+                showingImport = true
+            }
+            .keyboardShortcut("o")
+            .disabled(showingImport == nil)
+        }
+    }
+    
+}
+
+extension FocusedValues {
+    @Entry var showingImport: Binding<Bool>?
 }

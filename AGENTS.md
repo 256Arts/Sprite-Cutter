@@ -9,7 +9,7 @@ A small SwiftUI app for cutting a sprite-sheet image into individual sprite file
 Built from one target with `#if` compilation conditions, not separate targets:
 - The Mac build is a **native macOS app**, not Catalyst (`SUPPORTS_MACCATALYST = NO`); don't add `targetEnvironment(macCatalyst)` checks.
 - Sprite pixels travel as `CGImage` everywhere. `PlatformImage` (`UIImage`/`NSImage`) is only for asset lookup and `NSItemProvider`.
-- `os(macOS)` — denser layout, an editable spacing `IntField`, no toolbar items (links in the Help menu), and an explicit "Cut" button row; other platforms use a stepper + full-width button and a toolbar overflow menu.
+- `os(macOS)` — denser layout, an editable spacing `IntField`, no toolbar items (File > Import Spritesheet… ⌘O, links in the Help menu), and an explicit "Cut" button row; other platforms use a stepper + full-width button and a toolbar overflow menu.
 - `os(visionOS)` uses `.borderedProminent`; iOS uses `.glassProminent`.
 
 When editing UI or image code, check whether a change needs to be mirrored across these branches.

@@ -135,6 +135,7 @@ struct CutterView: View, DropDelegate {
             }
             #endif
         }
+        .focusedSceneValue(\.showingImport, $showingImport)
         .fileImporter(isPresented: $showingImport, allowedContentTypes: [.image], onCompletion: { result in
             guard let url = try? result.get(), url.startAccessingSecurityScopedResource(), let image = CGImage.loading(contentsOf: url) else {
                 showingImportError = true
